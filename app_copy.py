@@ -26,7 +26,7 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 # Uploading file in the form of pdf, doc and docx format 
-image = Image.open(r'C:\Users\Satya prasad Mohanty\Resume_parsing_fourty_ep\Resume_parsing_06122022\BPAI_logo.png')
+image = Image.open(r'BPAI_logo.png')
 st.image(image,width=200)
 st.header("RESUME PARSER")
 input_file=st.file_uploader(label='UPLOAD PDF FILE HERE:',type=['pdf','doc','docx'])
