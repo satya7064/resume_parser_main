@@ -17,13 +17,12 @@ import database
 
 def extraction(file):
      file_name = os.path.splitext(os.path.basename(file))[0]
-     new_reader = FARMReader(model_name_or_path=r"C:\Users\Satya prasad Mohanty\Downloads\Resume_parsing_fourty_ep\Resume_parsing_06122022\my_model_27032023")
+     new_reader = FARMReader(model_name_or_path=r"my_model_27032023")
      # new_reader = FARMReader(model_name_or_path=r"my_model4")
-     images = convert_from_path(file, poppler_path="C:/Program Files (x86)/poppler-0.68.0/bin")
+     images = convert_from_path(file, poppler_path="poppler_bin")
      for i in range(len(images)):
           # Save pages as images in the pdf
           images[i].save('./fileDir/page'+ str(i) +'.jpeg', 'JPEG')
-          # images[i].save('./Resume_parsing_06122022/fileDir/page'+ str(i) +'.jpeg', 'JPEG')
      def draw_boxes(image,bounds,color='yellow',width=2):
           draw=ImageDraw.Draw(image)
           for bound in bounds:
@@ -31,7 +30,6 @@ def extraction(file):
                draw.line([*p0,*p1,*p2,*p3,*p0], fill=color,width=width)
           return image
      path = './fileDir/'
-     # path = './Resume_parsing_06122022/fileDir/'
      fileList = os.listdir(path)
      context=''
      print(" ")
